@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Banner from "./Components/Header/Banner";
 import Navbar from "./Components/Header/Navbar";
@@ -6,6 +7,7 @@ import Header from "./Components/Main/Header";
 import Recipes from "./Components/Main/Recipes/Recipes";
 
 function App() {
+  
   return (
     <>
       <header className="container mx-auto">
@@ -15,7 +17,7 @@ function App() {
       <main className="container mx-auto">
         <Header></Header>
         <section className="md:grid md:grid-cols-3">
-          <Recipes className=""></Recipes>
+          <Recipes></Recipes>
           <Cart></Cart>
         </section>
       </main>
