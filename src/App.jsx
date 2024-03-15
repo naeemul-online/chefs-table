@@ -1,6 +1,9 @@
 import "./App.css";
 import Banner from "./Components/Header/Banner";
 import Navbar from "./Components/Header/Navbar";
+import Cart from "./Components/Main/Cart/Cart";
+import Header from "./Components/Main/Header";
+import Recipes from "./Components/Main/Recipes/Recipes";
 
 function App() {
   return (
@@ -9,8 +12,12 @@ function App() {
         <Navbar></Navbar>
         <Banner></Banner>
       </header>
-      <main>
-
+      <main className="container mx-auto">
+        <Header></Header>
+        <section className="md:grid md:grid-cols-3">
+          <Recipes className=""></Recipes>
+          <Cart></Cart>
+        </section>
       </main>
     </>
   );
