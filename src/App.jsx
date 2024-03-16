@@ -11,10 +11,15 @@ function App() {
   const [cartRecipies, setCartRecipes] = useState([])
 
   const handleWantToCook = (recipes_data) => {
-   const newCartRecipies = [...cartRecipies, recipes_data]
-   setCartRecipes(newCartRecipies)
+    const isExist = cartRecipies.find((item=>item.recipe_id == recipes_data.recipe_id))
+    if(!isExist){
+      setCartRecipes([...cartRecipies, recipes_data]);
+    } else {
+      alert("Already added")
+    }
+   
   }
-  console.log(cartRecipies)
+  // console.log(cartRecipies)
   return (
     <>
       <header className="container mx-auto">

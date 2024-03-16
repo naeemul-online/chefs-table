@@ -26,7 +26,7 @@ const Cart = ({cartRecipies}) => {
             {/* row 1 */}
                     
             {
-              cartRecipies.map((data, idx)=><Item key={idx} item_data={data}></Item>)
+              cartRecipies.map((data, idx)=><Item key={idx} item_data={data} index={idx + 1}></Item>)
             }
 
           </tbody>
