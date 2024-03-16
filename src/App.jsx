@@ -6,20 +6,24 @@ import Navbar from "./Components/Header/Navbar";
 import Cart from "./Components/Main/Cart/Cart";
 import Header from "./Components/Main/Header";
 import Recipes from "./Components/Main/Recipes/Recipes";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [cartRecipies, setCartRecipes] = useState([])
+  const[count, setCount] = useState(0)
 
   const handleWantToCook = (recipes_data) => {
     const isExist = cartRecipies.find((item=>item.recipe_id == recipes_data.recipe_id))
     if(!isExist){
       setCartRecipes([...cartRecipies, recipes_data]);
+      setCount(count + 1)
     } else {
-      alert("Already added")
+      notify()
     }
    
   }
-  // console.log(cartRecipies)
+  const notify = () => toast("This item already added !");
   return (
     <>
       <header className="container mx-auto">
@@ -28,9 +32,11 @@ function App() {
       </header>
       <main className="container mx-auto mb-10">
         <Header></Header>
-        <section className="md:grid md:grid-cols-3">
+        <ToastContainer />
+        <section className="lg:grid lg:grid-cols-3 gap-4">
           <Recipes handleWantToCook={handleWantToCook}></Recipes>
-          <Cart key={cartRecipies.id} cartRecipies={cartRecipies} ></Cart>
+          <Cart key={cartRecipies.id} cartRecipies={cartRecipies} count={count} ></Cart>
+          
         </section>
       </main>
     </>

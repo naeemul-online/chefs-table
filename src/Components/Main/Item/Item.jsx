@@ -1,13 +1,13 @@
-const Item = ({item_data, index}) => {
-    // console.log(item_data)
-    const {recipe_name, calories, preparing_time} = item_data
+const Item = ({ item_data, index, handleCurrently}) => {
+  // console.log(item_data)
+  const { recipe_name, calories, preparing_time } = item_data;
   return (
     <tr>
       <th>{index}</th>
       <td>{recipe_name}</td>
       <td>{preparing_time} Minute</td>
       <td>{calories} calories</td>
-      <button className="btn bg-green-400">Preparing</button>
+      <button onClick={()=>handleCurrently(item_data)} className="btn bg-green-400">Preparing</button>    
     </tr>
   );
 };

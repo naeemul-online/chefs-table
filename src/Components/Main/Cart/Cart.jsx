@@ -1,13 +1,30 @@
-import PropTypes from 'prop-types'; // ES6
-import Item from '../Item/Item';
+import PropTypes from "prop-types"; // ES6
+import Item from "../Item/Item";
+import Currently_Cooking_Item from "../Currently_Cooking_Item/Currently_Cooking_Item";
+import { useState } from "react";
 
-const Cart = ({cartRecipies}) => {
+const Cart = ({ cartRecipies, count }) => {
+
+  const [currentlyData, setCurrentlyData] = useState([]);
+  const [currentlyCount, setCurrentlyCount] = useState(0)
+console.log(currentlyCount)
+
+  const handleCurrently = (data) => {
+    const newCurrentlyData = [...currentlyData, data];
+    setCurrentlyData(newCurrentlyData)
+    // console.log(data.recipe_id)
+
+  };
+
+  // console.log(currentlyData)
+
+
 
   return (
-    <div className="col-span-1 border p-8">
+    <div className="p-4 border rounded">
       <div className="text-center text-2xl p-2">
         <h2>
-          Want to cook: <span>0</span>
+          Want to cook: <span>{count}</span>
         </h2>
       </div>
       <hr />
@@ -24,18 +41,22 @@ const Cart = ({cartRecipies}) => {
           </thead>
           <tbody>
             {/* row 1 */}
-                    
-            {
-              cartRecipies.map((data, idx)=><Item key={idx} item_data={data} index={idx + 1}></Item>)
-            }
 
+            {cartRecipies.map((data, idx) => (
+              <Item
+                key={idx}
+                item_data={data}
+                index={idx + 1}
+                handleCurrently={handleCurrently}
+              ></Item>
+            ))}
           </tbody>
         </table>
       </div>
 
       <div className="text-center text-2xl p-2">
         <h2>
-        Currently cooking: <span>0</span>
+          Currently cooking: <span>0</span>
         </h2>
       </div>
       <hr />
@@ -52,13 +73,11 @@ const Cart = ({cartRecipies}) => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
-            {/* row 1 */}
+            {
+              currentlyData.map((item, idx)=> <Currently_Cooking_Item key={idx} item={item} index={idx + 1}></Currently_Cooking_Item>)
+            }
+            
+            {/* row 2 */}
             <tr className="text-bold text-[#000]">
               <th></th>
               <td></td>
@@ -72,7 +91,7 @@ const Cart = ({cartRecipies}) => {
   );
 };
 Cart.propTypes = {
-    cartRecipies: PropTypes.array,
-  };
+  cartRecipies: PropTypes.array,
+};
 
 export default Cart;
