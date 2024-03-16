@@ -9,8 +9,8 @@
         "1/4 cup (60 ml) lemon juice",
         "2 cloves garlic, minced"
       ],
-      "preparing_time": "25 minutes",
-      "calories": "300 calories"
+      "preparing_time": 25,
+      "calories": 300
     },
     {
       "recipe_id": "CT002",
@@ -22,8 +22,8 @@
         "1/2 cup (120 ml) teriyaki sauce",
         "2 cups mixed vegetables (bell peppers, broccoli, carrots)"
       ],
-      "preparing_time": "35 minutes",
-      "calories": "400 calories"
+      "preparing_time": 35,
+      "calories": 400
     },
     {
       "recipe_id": "CT003",
@@ -35,8 +35,8 @@
         "400 g mixed mushrooms (button, cremini, shiitake)",
         "4 cups vegetable broth"
       ],
-      "preparing_time": "40 minutes",
-      "calories": "450 calories"
+      "preparing_time": 40,
+      "calories": 450
     },
     {
       "recipe_id": "CT004",
@@ -48,8 +48,8 @@
         "1/4 cup (60 ml) taco seasoning",
         "8 taco shells"
       ],
-      "preparing_time": "30 minutes",
-      "calories": "380 calories"
+      "preparing_time": 30,
+      "calories": 380
     },
     {
       "recipe_id": "CT005",
@@ -61,8 +61,8 @@
         "1/2 cup basil pesto",
         "1/4 cup sun-dried tomatoes, chopped"
       ],
-      "preparing_time": "20 minutes",
-      "calories": "420 calories"
+      "preparing_time": 20,
+      "calories": 420
     },
     {
       "recipe_id": "CT006",
@@ -74,8 +74,8 @@
         "1/4 cup (60 ml) honey",
         "2 cloves garlic, minced"
       ],
-      "preparing_time": "30 minutes",
-      "calories": "350 calories"
+      "preparing_time": 30,
+      "calories": 350
     }
   ]
   

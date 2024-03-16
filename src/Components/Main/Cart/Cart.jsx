@@ -1,4 +1,8 @@
-const Cart = () => {
+import PropTypes from 'prop-types'; // ES6
+import Item from '../Item/Item';
+
+const Cart = ({cartRecipies}) => {
+
   return (
     <div className="col-span-1 border p-8">
       <div className="text-center text-2xl p-2">
@@ -20,18 +24,18 @@ const Cart = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+                    
+            {
+              cartRecipies.map((data, idx)=><Item key={idx} item_data={data}></Item>)
+            }
+
           </tbody>
         </table>
       </div>
+
       <div className="text-center text-2xl p-2">
         <h2>
-          Want to cook: <span>0</span>
+        Currently cooking: <span>0</span>
         </h2>
       </div>
       <hr />
@@ -67,5 +71,8 @@ const Cart = () => {
     </div>
   );
 };
+Cart.propTypes = {
+    cartRecipies: PropTypes.array,
+  };
 
 export default Cart;
