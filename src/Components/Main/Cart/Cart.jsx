@@ -2,14 +2,24 @@ import PropTypes from "prop-types"; // ES6
 import Item from "../Item/Item";
 import Currently_Cooking_Item from "../Currently_Cooking_Item/Currently_Cooking_Item";
 import { useState } from "react";
+import Sum from "../Total_Time_And_Calories/Sum";
 
 const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
 
   const [currentlyData, setCurrentlyData] = useState([]);
-  const [currentlyCount, setCurrentlyCount] = useState(0)
 // console.log(currentlyCount)
+  const [currentCount, setCurrentCount] = useState(0)
+
+
+
+  const [calories, setCalories] = useState(0)
+  const [minutes, setMinutes] = useState(0)
+
+
+
 
   const handleCurrently = (data) => {
+    console.log(data)
     const newCurrentlyData = [...currentlyData, data];
     setCurrentlyData(newCurrentlyData)
     // const filterItem = data.filter((item => item.recipe_id == data.recipe_id))
@@ -17,10 +27,16 @@ const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
     const filterData = cartRecipies.filter((item => item.recipe_id != data.recipe_id))
     setCartRecipes(filterData)
     setCount(count - 1)
+    setCurrentCount(currentCount + 1)
+    setCalories(calories + data.calories)
+    setMinutes(minutes + data.preparing_time)
 
   };
 
-  // console.log(currentlyData)
+
+
+
+
 
 
 
@@ -60,7 +76,8 @@ const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
 
       <div className="text-center text-2xl p-2">
         <h2>
-          Currently cooking: <span>0</span>
+          
+          Currently cooking: <span>{currentCount}</span>
         </h2>
       </div>
       <hr />
@@ -83,10 +100,11 @@ const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
             
             {/* row 2 */}
             <tr className="text-bold text-[#000]">
+            
               <th></th>
               <td></td>
-              <td>Total Time = 45 minutes</td>
-              <td>Total Calories = 1050 calories</td>
+              <td>Total Time = {minutes} minutes</td>
+              <td>Total Calories = {calories} calories</td>
             </tr>
           </tbody>
         </table>

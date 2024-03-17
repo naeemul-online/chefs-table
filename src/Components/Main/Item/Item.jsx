@@ -1,5 +1,5 @@
 const Item = ({ item_data, index, handleCurrently}) => {
-  // console.log(item_data)
+//   console.log(item_data)
   const { recipe_name, calories, preparing_time, setCount } = item_data;
   console.log(setCount)
   return (
