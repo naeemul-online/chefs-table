@@ -14,9 +14,9 @@ const Recipes = ({ handleWantToCook }) => {
   return (
     <div className="col-span-2 p-4 border rounded">
       <div className="grid md:grid-cols-2 gap-4 mx-auto">
-        {recipes.map((recipe_data) => (
+        {recipes.map((recipe_data, idx) => (
           <Recipe
-            key={recipe_data.id}
+            key={idx}
             recipe_data={recipe_data}
             handleWantToCook={handleWantToCook}
           ></Recipe>
@@ -28,6 +28,7 @@ const Recipes = ({ handleWantToCook }) => {
 
 Recipes.propTypes = {
   recipe_data: PropTypes.object,
+  handleWantToCook: PropTypes.func
 };
 
 export default Recipes;

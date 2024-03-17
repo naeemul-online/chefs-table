@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"; // ES6
+
 const Item = ({ item_data, index, handleCurrently}) => {
 //   console.log(item_data)
   const { recipe_name, calories, preparing_time, setCount } = item_data;
@@ -12,5 +14,12 @@ const Item = ({ item_data, index, handleCurrently}) => {
     </tr>
   );
 };
+
+Item.propTypes = {
+    item_data: PropTypes.object,
+    index: PropTypes.number,
+    handleCurrently: PropTypes.func
+}
+
 
 export default Item;

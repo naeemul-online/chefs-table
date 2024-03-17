@@ -101,6 +101,9 @@ const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
 };
 Cart.propTypes = {
   cartRecipies: PropTypes.array,
+  count: PropTypes.number,
+  setCount: PropTypes.func,
+  setCartRecipes: PropTypes.func
 };
 
 export default Cart;

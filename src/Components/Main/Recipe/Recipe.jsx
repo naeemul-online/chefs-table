@@ -49,6 +49,7 @@ const Recipe = ({ recipe_data, handleWantToCook }) => {
 
 Recipe.propTypes = {
   recipe_data: PropTypes.object,
+  handleWantToCook: PropTypes.func
 };
 
 export default Recipe;
