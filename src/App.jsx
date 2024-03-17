@@ -35,7 +35,7 @@ function App() {
         <ToastContainer />
         <section className="lg:grid lg:grid-cols-3 gap-4">
           <Recipes handleWantToCook={handleWantToCook}></Recipes>
-          <Cart key={cartRecipies.id} cartRecipies={cartRecipies} count={count} ></Cart>
+          <Cart key={cartRecipies.id} cartRecipies={cartRecipies} count={count} setCount={setCount} setCartRecipes ={setCartRecipes} ></Cart>
           
         </section>
       </main>

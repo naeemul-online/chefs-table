@@ -3,16 +3,20 @@ import Item from "../Item/Item";
 import Currently_Cooking_Item from "../Currently_Cooking_Item/Currently_Cooking_Item";
 import { useState } from "react";
 
-const Cart = ({ cartRecipies, count }) => {
+const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
 
   const [currentlyData, setCurrentlyData] = useState([]);
   const [currentlyCount, setCurrentlyCount] = useState(0)
-console.log(currentlyCount)
+// console.log(currentlyCount)
 
   const handleCurrently = (data) => {
     const newCurrentlyData = [...currentlyData, data];
     setCurrentlyData(newCurrentlyData)
-    // console.log(data.recipe_id)
+    // const filterItem = data.filter((item => item.recipe_id == data.recipe_id))
+    // console.log(filterItem)
+    const filterData = cartRecipies.filter((item => item.recipe_id != data.recipe_id))
+    setCartRecipes(filterData)
+    setCount(count - 1)
 
   };
 
