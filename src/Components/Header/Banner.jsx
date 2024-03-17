@@ -2,7 +2,7 @@ import bgImage from '../../assets/Images/banner.png'
 const Banner = () => {
   return (
     <div>
-      <div className="card card-side justify-center  bg-no-repeat bg-cover bg-center h-[650px] mt-12" style={{ backgroundImage: `url(${bgImage})`}}>
+      <div className="card card-side justify-center  bg-no-repeat bg-cover bg-center h-[650px] mt-8" style={{ backgroundImage: `url(${bgImage})`}}>
         <div className="card-body items-center lg:p-52 md:p-30 text-[#fff] text-center">
           <h2 className="card-title text-5xl">Discover an exceptional cooking <br /> class tailored for you!</h2>
           <p className='text-lg font-light'>Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding <br />problems to become an exceptionally well world-class Programmer.</p>

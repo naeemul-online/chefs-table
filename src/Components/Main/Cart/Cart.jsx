@@ -2,28 +2,21 @@ import PropTypes from "prop-types"; // ES6
 import Item from "../Item/Item";
 import Currently_Cooking_Item from "../Currently_Cooking_Item/Currently_Cooking_Item";
 import { useState } from "react";
-import Sum from "../Total_Time_And_Calories/Sum";
 
 const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
 
   const [currentlyData, setCurrentlyData] = useState([]);
-// console.log(currentlyCount)
+
+
   const [currentCount, setCurrentCount] = useState(0)
-
-
 
   const [calories, setCalories] = useState(0)
   const [minutes, setMinutes] = useState(0)
-
-
-
 
   const handleCurrently = (data) => {
     console.log(data)
     const newCurrentlyData = [...currentlyData, data];
     setCurrentlyData(newCurrentlyData)
-    // const filterItem = data.filter((item => item.recipe_id == data.recipe_id))
-    // console.log(filterItem)
     const filterData = cartRecipies.filter((item => item.recipe_id != data.recipe_id))
     setCartRecipes(filterData)
     setCount(count - 1)
@@ -32,12 +25,6 @@ const Cart = ({ cartRecipies, count, setCartRecipes, setCount }) => {
     setMinutes(minutes + data.preparing_time)
 
   };
-
-
-
-
-
-
 
 
   return (

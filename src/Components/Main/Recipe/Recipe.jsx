@@ -1,8 +1,6 @@
-
 import PropTypes from "prop-types";
 const Recipe = ({ recipe_data, handleWantToCook }) => {
   const {
-    recipe_id,
     recipe_name,
     short_description,
     recipe_img,
@@ -37,7 +35,12 @@ const Recipe = ({ recipe_data, handleWantToCook }) => {
           </p>
         </div>
         <div className="card-actions">
-          <button onClick={()=>handleWantToCook(recipe_data)} className="btn  bg-[#0BE58A]">Want to Cook</button>
+          <button
+            onClick={() => handleWantToCook(recipe_data)}
+            className="btn  bg-[#0BE58A]"
+          >
+            Want to Cook
+          </button>
         </div>
       </div>
     </div>
